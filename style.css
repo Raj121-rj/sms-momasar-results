@@ -587,6 +587,27 @@ button { font-family: inherit; }
     font-style: italic;
 }
 
+/* ---------- Notice (subtle footnote) ---------- */
+.notice {
+    padding: 8px 2px 0;
+    margin-bottom: 18px;
+}
+
+.notice p { margin: 0; }
+
+.notice-hi {
+    font-size: 12.5px;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+.notice-en {
+    font-size: 11.5px;
+    color: var(--muted-2);
+    line-height: 1.5;
+    margin-top: 2px !important;
+}
+
 /* ---------- Result actions ---------- */
 .result-actions {
     display: flex;
@@ -889,53 +910,100 @@ button { font-family: inherit; }
     html, body { background: #fff; }
     body { padding: 14mm 12mm; display: block; }
 
+    body { padding: 8mm 10mm; }
+
     .site-header {
         position: static;
-        border-bottom: 2px solid var(--ink);
+        border-bottom: 1.5px solid var(--ink);
         background: #fff;
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
         padding: 0;
     }
-    .header-inner { padding: 10px 0; }
-    .brand-logo-img { width: 64px; height: 64px; filter: none; }
-    .brand-text h1 { font-size: 20px; }
-    .brand-text p { font-size: 11.5px; }
+    .header-inner { padding: 6px 0; }
+    .brand-logo-img { width: 52px; height: 52px; filter: none; }
+    .brand-text h1 { font-size: 17px; }
+    .brand-text p { font-size: 10.5px; margin-top: 1px; }
 
-    .result-section { padding: 14px 0 !important; }
+    .result-section { padding: 10px 0 !important; }
     .result-card {
         box-shadow: none !important;
         border: none !important;
         padding: 0 !important;
         background: transparent !important;
+        page-break-inside: avoid;
+        break-inside: avoid;
     }
-    .result-card-header { padding-bottom: 14px; }
+    .result-card-header { padding-bottom: 10px; gap: 10px; }
+    .result-eyebrow { font-size: 10px; margin-bottom: 3px; }
+    .result-title { font-size: 15px; }
+    .status-badge { padding: 4px 10px; font-size: 11px; border: 1px solid currentColor !important; }
 
+    .student-info {
+        padding: 12px 0 14px !important;
+        gap: 10px 22px !important;
+    }
+    .info-item { gap: 2px; }
+    .info-label { font-size: 9.5px; letter-spacing: .06em; }
+    .info-value { font-size: 12.5px; }
+
+    .score-showcase { margin: 12px 0 12px !important; gap: 10px; }
     .score-main {
         background: #fff !important;
         color: var(--ink) !important;
         border: 1.5px solid var(--ink);
         box-shadow: none !important;
+        padding: 12px 16px !important;
+        gap: 4px !important;
+        border-radius: 8px !important;
     }
     .score-main::before, .score-main::after { display: none; }
-    .score-main .score-value { color: var(--ink) !important; }
+    .score-main .score-value { color: var(--ink) !important; font-size: 38px; }
     .score-main .score-label,
     .score-main .score-total,
     .score-main .score-percent { color: var(--muted) !important; }
-    .score-bar { background: #e5e7eb !important; }
+    .score-label { font-size: 10px !important; }
+    .score-total { font-size: 15px !important; }
+    .score-value-wrap { margin: 2px 0 4px !important; }
+    .score-bar { height: 5px !important; background: #e5e7eb !important; }
     .score-bar-fill {
         background: var(--accent) !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
+    .score-percent { font-size: 11px !important; }
 
-    .score-stat, .prize-note {
+    .score-side { gap: 8px !important; }
+    .score-stat {
         background: #fff !important;
         border: 1px solid var(--line) !important;
+        padding: 10px 14px !important;
+        border-radius: 8px !important;
     }
-    .prize-note::before { background: var(--accent) !important; }
+    .score-stat-label { font-size: 9.5px; }
+    .score-stat-value { font-size: 18px; }
 
-    .status-badge { border: 1px solid currentColor !important; }
+    .prize-note {
+        background: #fff !important;
+        border: 1px solid var(--line) !important;
+        padding: 10px 14px 10px 18px !important;
+        margin-bottom: 10px !important;
+        border-radius: 8px !important;
+    }
+    .prize-note::before { background: var(--accent) !important; width: 3px !important; }
+    .prize-title { font-size: 12.5px; margin-bottom: 3px !important; }
+    .prize-line-hi { font-size: 12px; margin-top: 2px !important; }
+    .prize-line-en { font-size: 11px; }
+    .prize-footnote { font-size: 10.5px; margin-top: 4px !important; }
 
-    .container { max-width: 100%; padding: 0 16px; }
+    .notice {
+        background: transparent !important;
+        border: none !important;
+        padding: 6px 0 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .notice-hi { font-size: 10.5px; color: var(--muted) !important; }
+    .notice-en { font-size: 10px; color: var(--muted) !important; margin-top: 1px !important; }
+
+    .container { max-width: 100%; padding: 0 14px; }
 }
