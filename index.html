@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Jain Public Sr. Sec. School, Momasar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="data.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand">
+                <img src="logo.png" alt="SMS Jain Public School logo" class="brand-logo-img">
+                <div class="brand-text">
+                    <h1>SMS Jain Public Sr. Sec. School, Momasar</h1>
+                    <p>Affiliated to BSER • Since 1989 • A Great Place For Education</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2 class="hero-title">प्रतिभा खोज परीक्षा <span class="hero-title-year">2026</span></h2>
+                <p class="hero-subtitle">Enter your roll number below to view your result instantly.</p>
+
+                <form class="search-form" id="searchForm">
+                    <div class="search-input-wrap">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" class="search-input" id="rollInput" placeholder="Enter Roll Number (e.g. 929)" aria-label="Roll Number" autocomplete="off" inputmode="numeric">
+                    </div>
+                    <button type="submit" class="btn-primary">View Result</button>
+                </form>
+
+                <p class="hero-note">Having trouble? Call the helpline at <a href="tel:9983883391">9983883391</a> or <a href="tel:7976707150">7976707150</a></p>
+            </div>
+        </section>
+
+        <section class="result-section hidden" id="resultSection">
+            <div class="container">
+                <div class="result-card">
+                    <div class="celebration hidden" id="celebration">
+                        <div class="celebration-icon" id="celebrationIcon"></div>
+                        <div class="celebration-copy">
+                            <p class="celebration-kicker" id="celebrationKicker">You've won a prize!</p>
+                            <p class="celebration-title" id="celebrationTitle">—</p>
+                        </div>
+                    </div>
+                    <div class="result-card-header">
+                        <div>
+                            <p class="result-eyebrow">Result Statement</p>
+                            <h3 class="result-title">प्रतिभा खोज परीक्षा 2026 — Talent Hunt Exam</h3>
+                        </div>
+                        <span class="status-badge" id="res-badge">Rank —</span>
+                    </div>
+
+                    <div class="student-info">
+                        <div class="info-item">
+                            <span class="info-label">Student Name</span>
+                            <span class="info-value" id="res-name">—</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Roll Number</span>
+                            <span class="info-value" id="res-roll">—</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Father's Name</span>
+                            <span class="info-value" id="res-father">—</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Class</span>
+                            <span class="info-value" id="res-class">—</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Mobile</span>
+                            <span class="info-value" id="res-mobile">—</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Address</span>
+                            <span class="info-value" id="res-address">—</span>
+                        </div>
+                    </div>
+
+                    <div class="score-showcase">
+                        <div class="score-main">
+                            <span class="score-label">Marks Obtained</span>
+                            <div class="score-value-wrap">
+                                <span class="score-value" id="res-marks">0</span>
+                                <span class="score-total">/ 60</span>
+                            </div>
+                            <div class="score-bar">
+                                <div class="score-bar-fill" id="res-bar-fill" style="width: 0%;"></div>
+                            </div>
+                            <span class="score-percent" id="res-percent">0%</span>
+                        </div>
+                        <div class="score-side">
+                            <div class="score-stat">
+                                <span class="score-stat-label">Overall Rank</span>
+                                <span class="score-stat-value" id="res-rank">#—</span>
+                            </div>
+                            <div class="score-stat">
+                                <span class="score-stat-label">Fee Waiver</span>
+                                <span class="score-stat-value" id="res-waiver">—</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="prize-note">
+                        <p class="prize-title"><strong id="res-prize-headline">Congratulations!</strong></p>
+                        <p class="prize-line-hi" id="res-prize-hi">—</p>
+                        <p class="prize-line-en" id="res-prize-en">—</p>
+                        <p class="prize-footnote">Please collect your prize from the school office.</p>
+                    </div>
+
+                    <div class="result-actions">
+                        <button class="btn-primary" onclick="window.print()">Print Result</button>
+                        <button class="btn-ghost" data-action="reset">Search Another</button>
+                    </div>
+
+                    <p class="disclaimer">This is a provisional statement. The official marksheet issued by the school shall be treated as final.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="result-section hidden" id="notFound">
+            <div class="container">
+                <div class="not-found-card">
+                    <div class="not-found-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="8" x2="12" y2="12"></line>
+                            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                        </svg>
+                    </div>
+                    <h3 class="not-found-title">No result found</h3>
+                    <p class="not-found-text">We couldn't find a record for roll number <strong id="notFoundRoll">—</strong>. Please double-check your roll number and try again.</p>
+                    <button class="btn-primary" data-action="reset">Try Again</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div>
+                <p class="footer-title">SMS Jain Public Sr. Sec. School</p>
+                <p class="footer-sub">Ganesh Dhora Bass, Momasar (Bikaner) • Helpline: 9983883391, 7976707150</p>
+            </div>
+            <p class="footer-copy">© 2026 SMS Jain Public Sr. Sec. School. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
